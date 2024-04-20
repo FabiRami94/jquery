@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script src="jquery-3.7.1.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        $(document).ready(function(){
-          $("button").click(function(){
-            $("p").hide();
-          });
-        });
-    </script>
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    $(document).ready(function () {
+      $("#button1").click(function () {
+        $("p").hide();
+      });
+    });
+
+  $(document).ready(function(){
+    $("#button2").click(function(){
+      let div = $("div");
+      div.animate({height: '300px', opacity: '0.4'}, "slow");
+      div.animate({width: '300px', opacity: '0.8'}, "slow");
+      div.animate({height: '100px', opacity: '0.4'}, "slow");
+      div.animate({width: '100px', opacity: '0.8'}, "slow");
+    });
+  });
+  </script>
 </head>
+
 <body>
 
-<h2>This is a heading</h2>
+  <h2>This is a heading</h2>
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+  <button id="button1">Click me to hide paragraphs</button>
 
-<p>This is a paragraph.</p>
-<p>This is another paragraph.</p>
 
-<button>Click me to hide paragraphs</button>
-    
+
+  <button id="button2">Start Animation</button>
+  <div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+
 </body>
+
 </html>
 
 <!-- $(selector).action()
@@ -54,10 +70,12 @@ $("tr:odd")	Selects all odd <tr> elements -->
 
 
 <!-- $(selector).hide(speed,callback);
-$(selector).show(speed,callback);  Toogle-ambos-->  
+$(selector).show(speed,callback);  toogle-ambos-->
 <!-- 
-$("button").click(function(){
+$("button").click(function(){   fadeToogle
   $("#div1").fadeIn();        IR APARECIENDO HACIA ABAJO
   $("#div2").fadeIn("slow");
   $("#div3").fadeIn(3000);
 }); -->
+
+<!-- $("div").animate({fontSize: '100px'}, "slow"); -->
